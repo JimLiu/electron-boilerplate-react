@@ -1,0 +1,11 @@
+{
+  "app": {
+    "name": "Electron-Boilerplate-React",
+    "beta": true,
+  },
+  "title": "Electron Boilerplate React",
+  "autoUpdater": {
+    "enabled": false,
+    "feedUrl": "http://UPDATE-SERVER/latest?version=[version]&beta=[beta]"
+  }
+}

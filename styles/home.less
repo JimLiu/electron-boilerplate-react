@@ -1,0 +1,26 @@
+@import "variables.less";
+
+.home {
+  flex: 1 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  .home-content {
+    flex: 1 auto;
+    margin-top: 45px;
+    padding: 50px;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      margin-top: 40px;
+      border-bottom: 1px solid #EEE;
+      text-align: left;
+      font-size: 18px;
+      font-weight: 400;
+      color: @gray-darker;
+    }
+  }
+}

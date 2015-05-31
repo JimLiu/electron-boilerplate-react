@@ -1,0 +1,219 @@
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+
+h2 {
+  font-size: 18px;
+  color: @gray-normal;
+}
+
+h3 {
+  font-size: 14px;
+  color: @gray-darkest;
+}
+
+h4 {
+  font-size: 13px;
+  color: @gray-darker;
+  font-weight: 500;
+}
+
+a {
+  transition: color 0.25s;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+input[type="text"] {
+  &.line {
+    border: 0;
+    border-bottom: 1px solid @gray-lightest;
+    color: @gray-normal;
+    font-weight: 300;
+    padding: 5px;
+    transition: all 0.25s;
+    &:focus {
+      outline: 0;
+      border-bottom: 1px solid @brand-action;
+    }
+    &::-webkit-input-placeholder {
+      color: #DDD;
+      font-weight: 300;
+    }
+  }
+}
+
+//
+// Buttons
+// --------------------------------------------------
+
+// Common styles
+.btn-default,
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-warning,
+.btn-danger {
+
+}
+
+// Mixin for generating new styles
+.btn-styles(@btn-color: @gray-normal) {
+  transition: all 0.25s;
+  .reset-filter(); // Disable gradients for IE9 because filter bleeds through rounded corners
+  border-color: @btn-color;
+  color: @btn-color;
+
+  &:hover,
+  &:focus {
+    border-color: darken(@btn-color, 15%);
+    color: darken(@btn-color, 15%);
+    cursor: default;
+    box-shadow: none;
+    background: none;
+  }
+
+  &:active {
+    background-color: lighten(@btn-color, 45%);
+    border-color: darken(@btn-color, 15%);
+    color: darken(@btn-color, 15%);
+    box-shadow: none;
+  }
+
+  &.active {
+    background-color: @btn-color;
+    color: white;
+    box-shadow: none;
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &[disabled] {
+    opacity: 0.5;
+    background: none;
+    &.active {
+      background: none;
+      color: white;
+      box-shadow: none;
+      box-shadow: none;
+    }
+  }
+}
+
+.btn-group {
+  &.tabs {
+    .btn {
+      padding: 6px 14px 6px 14px;
+    }
+  }
+  .btn {
+    .icon-dropdown {
+      &.icon:before {
+        position: relative;
+        font-size: 10px;
+        top: -2px;
+        margin-left: 0px;
+        margin-right: 4px;
+      }
+    }
+  }
+}
+
+// Common styles
+.btn {
+  font-size: 13px;
+  background-color: transparent;
+  color: @gray-normal;
+  border: 1px solid @gray-normal;
+  border-radius: 40px;
+  box-shadow: none;
+  font-weight: 400;
+  text-shadow: none;
+  padding: 5px 14px 5px 14px;
+  cursor: default;
+
+  &.small {
+    font-size: 11px;
+    padding: 3px 8px 3px 8px;
+    height: 22px;
+    .icon {
+      font-size: 10px;
+    }
+  }
+
+  .content {
+    position: relative;
+    top: -4px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .icon-dropdown {
+    &.icon:before {
+      font-size: 10px;
+      position: relative;
+      top: -2px;
+    }
+  }
+
+  .icon {
+    position: relative;
+    font-size: 16px;
+  }
+
+  // Remove the gradient for the pressed/active state
+  &:active,
+  &.active {
+    background-image: none;
+    box-shadow: none;
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: none;
+    outline: none !important;
+  }
+
+  &.only-icon {
+    padding: 6px 7px 6px 7px;
+    &.small {
+      width: 22px;
+      padding: 4px 5px 4px 5px;
+    }
+  }
+}
+
+// Apply the mixin to the buttons
+.btn-action {
+  .btn-styles(@brand-action);
+}
+.btn-positive {
+  .btn-styles(@brand-positive);
+  &:hover,
+  &:focus {
+    border-color: darken(@brand-positive, 7%);
+    color: darken(@brand-positive, 7%);
+  }
+  &:active {
+    background-color: lighten(@brand-positive, 53%);
+    border-color: darken(@brand-positive, 7%);
+    color: darken(@brand-positive, 7%);
+  }
+}
+.btn-default { .btn-styles(@btn-default-bg); }
+.btn-primary { .btn-styles(@btn-primary-bg); }
+.btn-success { .btn-styles(@btn-success-bg); }
+.btn-info    { .btn-styles(@btn-info-bg); }
+.btn-warning { .btn-styles(@btn-warning-bg); }
+.btn-danger  { .btn-styles(@btn-danger-bg); }
+
+.tooltip {
+  .tooltip-inner {
+    font-size: 10px;
+    padding-bottom: 5px;
+  }
+}

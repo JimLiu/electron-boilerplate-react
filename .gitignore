@@ -1,0 +1,20 @@
+.DS_Store
+.swp
+build
+dist
+node_modules
+coverage
+npm-debug.log
+
+# Signing Identity
+identity*
+
+# Integration test environment
+integration
+
+# Cache
+cache
+
+
+# IDEs
+.idea
